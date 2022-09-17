@@ -42,11 +42,11 @@ while estado_trivia:
   for time_carga in range (6,0,-1): #desafio a
     if c in (1,3):
       time.sleep(1)
-      print(BLACK+"\n"+mensaje_carga+RESET)
+      print(WHITE+"\n"+mensaje_carga+RESET)
       c = 1
       
     time.sleep(1)
-    print(BLACK+mensaje_carga+"."*c+RESET)
+    print(WHITE+mensaje_carga+"."*c+RESET)
     c += 1
     
   #Primera pregunta de la trivia
@@ -88,11 +88,11 @@ while estado_trivia:
   for time_carga in range (6,0,-1):
     if c in (1,3):
       time.sleep(1)
-      print(BLACK+"\n"+mensaje_carga+RESET)
+      print(WHITE+"\n"+mensaje_carga+RESET)
       c = 1
       
     time.sleep(1)
-    print(BLACK+mensaje_carga+"."*c+RESET)
+    print(WHITE+mensaje_carga+"."*c+RESET)
     c += 1
   
   #Segunda pregunta de la trivia
@@ -134,11 +134,11 @@ while estado_trivia:
   for time_carga in range (6,0,-1):
     if c in (1,3):
       time.sleep(1)
-      print(BLACK+"\n"+mensaje_carga+RESET)
+      print(WHITE+"\n"+mensaje_carga+RESET)
       c = 1
       
     time.sleep(1)
-    print(BLACK+mensaje_carga+"."*c+RESET)
+    print(WHITE+mensaje_carga+"."*c+RESET)
     c += 1
   
   #Tercera pregunta de la trivia
@@ -180,11 +180,11 @@ while estado_trivia:
   for time_carga in range (6,0,-1):
     if c in (1,3):
       time.sleep(1)
-      print(BLACK+"\n"+mensaje_carga+RESET)
+      print(WHITE+"\n"+mensaje_carga+RESET)
       c = 1
       
     time.sleep(1)
-    print(BLACK+mensaje_carga+"."*c+RESET)
+    print(WHITE+mensaje_carga+"."*c+RESET)
     c += 1
   
   #Cuarta pregunta de la trivia
@@ -226,11 +226,11 @@ while estado_trivia:
   for time_carga in range (6,0,-1): #desafio b
     if c in (1,3):
       time.sleep(1)
-      print(BLACK+"\n"+mensaje_ruleta+RESET)
+      print(WHITE+"\n"+mensaje_ruleta+RESET)
       c = 1
       
     time.sleep(1)
-    print(BLACK+mensaje_ruleta+"."*c+RESET)
+    print(WHITE+mensaje_ruleta+"."*c+RESET)
     c += 1
     puntaje+=random.randint(0,5)
   
