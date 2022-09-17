@@ -24,7 +24,7 @@ intento = 0
 save_name = []
 
 
-
+#Número de intentos
 print(GREEN+"\nIntentos:",str(intento)+".",end="\n"+RESET)
   
   #Bienvenida a la trivia
@@ -39,6 +39,7 @@ name = input(MAGENTA+"Escribe tu nombre: "+RESET) #Ingresar nombre del usuario
 save_name.append(name)
 
 while estado_trivia:
+  #Número de intentos actualizado
   if intento > 0:
     print(GREEN+"\nIntentos:",str(intento)+".",end="\n"+RESET)
   
@@ -68,10 +69,10 @@ while estado_trivia:
     d) Ninguno
     """+RESET #correcto a
   )
-  respuesta_1 = input(MAGENTA+name + " escribe aquí tu 1° respuesta: "+RESET)
+  respuesta_1 = input(MAGENTA+str(save_name[0])+" escribe aquí tu 1° respuesta: "+RESET)
   
   while respuesta_1 not in ("a","b","c","d","p"):
-    respuesta_1 = input(MAGENTA+name + ", esa no es una alternativa válida. Por favor, escribe nuevamente tu 1° respuesta: "+RESET)
+    respuesta_1 = input(RED+str(save_name[0])+", esa no es una alternativa válida."+RESET+MAGENTA+" Por favor, escribe nuevamente tu 1° respuesta: "+RESET)
     #respuestas alternativas
   if respuesta_1 == "b":
     print(RED+"\nTres clubes franceses? No es correcto!"+RESET)
@@ -86,11 +87,11 @@ while estado_trivia:
     puntaje-=random.randint(0,5) #desafio a
     print(GREEN+"Puntaje actual:",puntaje,end="\n"+RESET)
   elif respuesta_1 == "p":
-    print(GREEN+"\nEncontraste un mensaje oculto,",name+"!"+RESET)
+    print(GREEN+"\nEncontraste un mensaje oculto,",str(save_name[0])+"!"+RESET)
     puntaje+=random.randint(15,30) #desafio a
     print(GREEN+"Puntaje actual:",puntaje,end="\n"+RESET)
   else:
-    print(GREEN+"\nMuy bien,",name+"!","Es correcto que solo un club francés ha ganado la Champions!"+RESET)
+    print(GREEN+"\nMuy bien,",str(save_name[0])+"!","Es correcto que solo un club francés ha ganado la Champions!"+RESET)
     puntaje+=random.randint(5,10) #desafio a
     print(GREEN+"Puntaje actual:",puntaje,end="\n"+RESET)
   
@@ -114,10 +115,10 @@ while estado_trivia:
     d) Ninguno
     """+RESET#correcto b
   )
-  respuesta_2 = input(MAGENTA+name + " escribe aquí tu 2° respuesta: "+RESET)
+  respuesta_2 = input(MAGENTA+str(save_name[0]) + " escribe aquí tu 2° respuesta: "+RESET)
   
   while respuesta_2 not in ("a","b","c","d","x"):
-    respuesta_2 = input(MAGENTA+name + ", esa no es una alternativa válida. Por favor, escribe nuevamente tu 2° respuesta: "+RESET)
+    respuesta_2 = input(RED+str(save_name[0]) + ", esa no es una alternativa válida."+RESET+MAGENTA+" Por favor, escribe nuevamente tu 2° respuesta: "+RESET)
     #respuestas alternativas
   if respuesta_2 == "a":
     print(RED+"\nSuker anotó el único gol? No es correcto!"+RESET)
@@ -132,11 +133,11 @@ while estado_trivia:
     puntaje-=random.randint(5,10) #desafio a
     print(GREEN+"Puntaje actual:",puntaje,end="\n"+RESET)
   elif respuesta_2 == "x":
-    print(GREEN+"\nEncontraste un mensaje oculto,",name+"!"+RESET)
+    print(GREEN+"\nEncontraste un mensaje oculto,",str(save_name[0])+"!"+RESET)
     puntaje+=random.randint(15,30) #desafio a
     print(GREEN+"Puntaje actual:",puntaje,end="\n"+RESET)
   else:
-    print(GREEN+"\nMuy bien,",name+"!","Es correcto que Mijatovic anotó el único gol en la final del 98 entre el Real Madrid y Juventus!"+RESET)
+    print(GREEN+"\nMuy bien,",str(save_name[0])+"!","Es correcto que Mijatovic anotó el único gol en la final del 98 entre el Real Madrid y Juventus!"+RESET)
     puntaje+=random.randint(5,10) #desafio a
     print(GREEN+"Puntaje actual:",puntaje,end="\n"+RESET)
   
@@ -160,10 +161,10 @@ while estado_trivia:
     d) 6
     """+RESET#correcto b
   )
-  respuesta_3 = input(MAGENTA+name + " escribe aquí tu 3° respuesta: "+RESET)
+  respuesta_3 = input(MAGENTA+str(save_name[0]) + " escribe aquí tu 3° respuesta: "+RESET)
   
   while respuesta_3 not in ("a","b","c","d","r"):
-    respuesta_3 = input(MAGENTA+name + ", esa no es una alternativa válida. Por favor, escribe nuevamente tu 3° respuesta: "+RESET)
+    respuesta_3 = input(RED+str(save_name[0]) + ", esa no es una alternativa válida."+RESET+MAGENTA+" Por favor, escribe nuevamente tu 3° respuesta: "+RESET)
     #respuestas alternativas
   if respuesta_3 == "a":
     print(RED+"\nSolo fue un peruano? No es correcto!"+RESET)
@@ -178,11 +179,11 @@ while estado_trivia:
     puntaje-=random.randint(10,15) #desafio a
     print(GREEN+"Puntaje actual:",puntaje,end="\n"+RESET)
   elif respuesta_3 == "r":
-    print(GREEN+"\nEncontraste un mensaje oculto,",name+"!"+RESET)
+    print(GREEN+"\nEncontraste un mensaje oculto,",str(save_name[0])+"!"+RESET)
     puntaje+=random.randint(15,30) #desafio a
     print(GREEN+"Puntaje actual:",puntaje,end="\n"+RESET)
   else:
-    print(GREEN+"\nMuy bien,",name+"!","Es correcto que dos peruanos disputaron la final de la Copa Europa/Champions League!"+RESET)
+    print(GREEN+"\nMuy bien,",str(save_name[0])+"!","Es correcto que dos peruanos disputaron la final de la Copa Europa/Champions League!"+RESET)
     puntaje+=random.randint(5,10) #desafio a
     print(GREEN+"Puntaje actual:",puntaje,end="\n"+RESET)
   
@@ -206,10 +207,10 @@ while estado_trivia:
     d) Rivaldo
     """+RESET#correcto c
   )
-  respuesta_4 = input(MAGENTA+name + " escribe aquí tu 4° respuesta: "+RESET)
+  respuesta_4 = input(MAGENTA+str(save_name[0]) + " escribe aquí tu 4° respuesta: "+RESET)
   
   while respuesta_4 not in ("a","b","c","d","m"):
-    respuesta_4 = input(MAGENTA+name + ", esa no es una alternativa válida. Por favor, escribe nuevamente tu 4° respuesta: "+RESET)
+    respuesta_4 = input(RED+str(save_name[0]) + ", esa no es una alternativa válida."+RESET+MAGENTA+" Por favor, escribe nuevamente tu 4° respuesta: "+RESET)
     #respuestas alternativas
   if respuesta_4 == "a":
     print(RED+"\nMüller anotó en la final? No es correcto!"+RESET)
@@ -224,11 +225,11 @@ while estado_trivia:
     puntaje-=5
     print(GREEN+"Puntaje actual:",puntaje,end="\n"+RESET)
   elif respuesta_4 == "m":
-    print(GREEN+"\nEncontraste un mensaje oculto,",name+"!"+RESET)
+    print(GREEN+"\nEncontraste un mensaje oculto,",str(save_name[0])+"!"+RESET)
     puntaje+=random.randint(15,30)
     print(GREEN+"Puntaje actual:",puntaje,end="\n"+RESET)
   else:
-    print(GREEN+"\nMuy bien,",name+"!","Es correcto que Lars Ricken entró a una final de Champions League y anotó cuando apenas tenía 16 segundos en la cancha!"+RESET)
+    print(GREEN+"\nMuy bien,",str(save_name[0])+"!","Es correcto que Lars Ricken entró a una final de Champions League y anotó cuando apenas tenía 16 segundos en la cancha!"+RESET)
     puntaje*=2
     print(GREEN+"Puntaje actual:",puntaje,end="\n"+RESET)
   
@@ -248,11 +249,11 @@ while estado_trivia:
   print(CYAN+"\nGracias,",str(save_name[0])+", por jugar mi trivia sobre la Champions League!!. Alcanzaste", puntaje,"puntos, con un bonus por ruleta de",bonus_ruleta, end=" puntos.\n"+RESET)
   
   time.sleep(4)
-  pregunta_estado = input(BLUE+name+", deseas nuevamente realizar el test? (y/n): "+RESET).lower()
+  pregunta_estado = input(BLUE+str(save_name[0])+", deseas nuevamente realizar el test? (y/n): "+RESET).lower()
 
   if pregunta_estado != "y":
     time.sleep(2)
-    print(CYAN+"\nEspero que te hayas divertido,",name+"!. Ojalá puedas volver pronto para jugar. Hasta luego."+RESET)
+    print(CYAN+"\nEspero que te hayas divertido,",str(save_name[0])+"!. Ojalá puedas volver pronto para jugar. Hasta luego."+RESET)
     estado_trivia = False
 
   intento+=1
