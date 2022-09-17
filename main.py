@@ -15,6 +15,7 @@ RESET = '\033[39m'
 
 mensaje_carga = "Cargando pregunta."
 mensaje_ruleta = "Calculando puntaje final."
+bonus_ruleta = 0
 c = 1 #contador
 
 estado_trivia = True
@@ -232,10 +233,11 @@ while estado_trivia:
     time.sleep(1)
     print(WHITE+mensaje_ruleta+"."*c+RESET)
     c += 1
-    puntaje+=random.randint(0,5)
+  bonus_ruleta = random.randint(0,5)
+  puntaje+= bonus_ruleta
   
   #Fin de la trivia
-  print(CYAN+"\nGracias,",name+", por jugar mi trivia sobre la Champions League!!. Alcanzaste", puntaje,"puntos.\n"+RESET)
+  print(CYAN+"\nGracias,",name+", por jugar mi trivia sobre la Champions League!!. Alcanzaste", puntaje,"puntos, con un bonus por ruleta de",bonus_ruleta, end=".\n"+RESET)
   
   time.sleep(4)
   pregunta_estado = input(BLUE+name+", deseas nuevamente realizar el test? (y/n): "+RESET).lower()
