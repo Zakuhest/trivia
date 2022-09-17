@@ -21,23 +21,31 @@ c = 1 #contador
 estado_trivia = True
 intento = 0
 
-while estado_trivia:
+save_name = []
 
-  print(GREEN+"\nIntentos:",str(intento)+".",end="\n"+RESET)
+
+
+print(GREEN+"\nIntentos:",str(intento)+".",end="\n"+RESET)
   
   #Bienvenida a la trivia
-  print(BLUE+"""
-  Bienvenido a mi trivia sobre la Champions League, donde pondré a prueba tus conocimientos deportivos. 
+print(BLUE+"""
+Bienvenido a mi trivia sobre la Champions League, donde pondré a prueba tus conocimientos deportivos. 
+ 
+Antes de comenzar, podrías escribir tu nombre?: \n
+"""+RESET)
   
-  Antes de comenzar, podrías escribir tu nombre?: \n
-  """+RESET)
+time.sleep(2)
+name = input(MAGENTA+"Escribe tu nombre: "+RESET) #Ingresar nombre del usuario
+save_name.append(name)
+
+while estado_trivia:
+  if intento > 0:
+    print(GREEN+"\nIntentos:",str(intento)+".",end="\n"+RESET)
   
-  time.sleep(2)
-  name = input(MAGENTA+"Escribe tu nombre: "+RESET) #Ingresar nombre del usuario
   puntaje = random.randint(0,10) #puntaje aleatorio
   
   #Instrucciones de la trivia
-  print(BLUE+"\nGenial,",name + "!. Responde las siguientes preguntas, escribiendo la alternativa que creas correcta y presionando 'Enter' podrás enviar tu respuesta:"+RESET)
+  print(BLUE+"\nGenial,",str(save_name[0]) + "!. Responde las siguientes preguntas, escribiendo la alternativa que creas correcta y presionando 'Enter' podrás enviar tu respuesta:"+RESET)
   print(GREEN+"\nComenzaras con:",puntaje,"puntos.",end="\n"+RESET)
   
   for time_carga in range (6,0,-1): #desafio a
@@ -237,7 +245,7 @@ while estado_trivia:
   puntaje+= bonus_ruleta
   
   #Fin de la trivia
-  print(CYAN+"\nGracias,",name+", por jugar mi trivia sobre la Champions League!!. Alcanzaste", puntaje,"puntos, con un bonus por ruleta de",bonus_ruleta, end=".\n"+RESET)
+  print(CYAN+"\nGracias,",str(save_name[0])+", por jugar mi trivia sobre la Champions League!!. Alcanzaste", puntaje,"puntos, con un bonus por ruleta de",bonus_ruleta, end=" puntos.\n"+RESET)
   
   time.sleep(4)
   pregunta_estado = input(BLUE+name+", deseas nuevamente realizar el test? (y/n): "+RESET).lower()
